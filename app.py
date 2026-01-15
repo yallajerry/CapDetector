@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # api key
-client = genai.Client()
+client = genai.Client(api_key=os.getenv("API_KEY"))
 
 @app.route('/')
 def index():
@@ -39,3 +39,4 @@ def check_statement():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
